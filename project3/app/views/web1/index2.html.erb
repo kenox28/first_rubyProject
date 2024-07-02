@@ -1,0 +1,18 @@
+<!-- app/views/web1/index2.html.erb -->
+<form action="/formlogin" method="post" class="d-flex align-content-center align_item-center flex-column justify-content-center">
+     <%= csrf_meta_tags %>
+     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+     <h2>Login</h2>
+     <div class="mb-3">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+     </div>
+     <div class="mb-3">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+     </div>
+     <button type="button" class="btn btn-primary">login</button>
+</form>
+<% if @username.present? %>
+     <h1>Welcome, <%= @username %></h1>
+<% end %>
